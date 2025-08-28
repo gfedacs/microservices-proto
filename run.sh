@@ -2,7 +2,8 @@
 GITHUB_USERNAME=gfedacs
 GITHUB_EMAIL=gfedacs@hotmail.com
 
-SERVICE_NAME=order
+# SERVICE_NAME=order
+SERVICE_NAME=shipping
 RELEASE_VERSION=v1.2.3
 
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest 
@@ -24,13 +25,3 @@ cd golang/${SERVICE_NAME}
 go mod init \
   github.com/${GITHUB_USERNAME}/microservices-proto/golang/${SERVICE_NAME} || true
 go mod tidy || true
-#cd ../../
-#git config --global user.email ${GITHUB_EMAIL}
-#git config --global user.name ${GITHUB_USERNAME}
-#git add . && git commit -am "proto update" || true
-#git push -u origin HEAD
-#git tag -d ch03/listing_3.2/golang/${SERVICE_NAME}/${RELEASE_VERSION}
-#git push --delete origin ch03/listing_3.2/golang/${SERVICE_NAME}/${RELEASE_VERSION}
-#git tag -fa ch03/listing_3.2/golang/${SERVICE_NAME}/${RELEASE_VERSION} \
-#  -m "ch03/listing_3.2/golang/${SERVICE_NAME}/${RELEASE_VERSION}"
-#git push origin refs/tags/ch03/listing_3.2/golang/${SERVICE_NAME}/${RELEASE_VERSION}
